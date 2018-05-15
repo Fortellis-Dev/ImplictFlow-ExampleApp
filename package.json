@@ -1,0 +1,29 @@
+{
+  "name": "ImplictFlow-ExampleApp",
+  "version": "0.1.0",
+  "description": "A simple single-page react app that acquires a Fortellis OAuth token using the implicit grant and uses it to make an API call",
+  "keywords": [
+    "fortellis",
+    "oauth",
+    "token",
+    "implicit",
+    "react"
+  ],
+  "author": "ian.woolf@cdk.com",
+  "homepage": "https://github.com/Fortellis/ImplictFlow-ExampleApp",
+  "repository": "https://github.com/Fortellis/ImplictFlow-ExampleApp",
+  "bugs": "https://github.com/Fortellis/ImplictFlow-ExampleApp/issues",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
