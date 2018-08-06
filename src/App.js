@@ -5,12 +5,12 @@ import './App.css';
 // replace this with the client_id of your fortellis app
 const client_id = 'placeholder-client-id';
 
-// the exchange-org-id represents the dealership context of an API call
+// the Subscription-Id represents the dealership context of an API call
 // in this example, we call the merchandisable vehicles API to get the vehicles available for sale in a given dealership
-// the exchange-org-id represents which dealership we are talking about
-// 'test' is a special exchange-org-id that represents a sample dealership that provides test data
-// when a dealership customer purchases and uses your app, you will need to use their exchange-org-id in your API calls
-const exchange_org_id = 'test';
+// the Subscription-Id represents which dealership we are talking about
+// 'test' is a special Subscription-Id that represents a sample dealership that provides test data
+// when a dealership customer purchases and uses your app, you will need to use their Subscription-Id in your API calls
+const subscription_id = 'test';
 
 let token;
 
@@ -33,7 +33,7 @@ class App extends Component {
     // supply the previously acquired token in the Authorization header
     fetch('https://api.fortellis.io/sales/inventory/v0/merchandisable-vehicles/', {
         headers: {
-          'exchange-org-id': exchange_org_id,
+          'Subscription-Id': subscription_id,
           'Authorization': `Bearer ${token}`
         }
       }).then((response) => {
