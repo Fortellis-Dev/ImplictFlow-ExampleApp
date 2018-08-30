@@ -4,6 +4,8 @@ import './App.css';
 
 // replace this with the client_id of your fortellis app
 const client_id = 'placeholder-client-id';
+// replace this with the redirect url of your fortellis app
+const redirect_uri = encodeURI('https://placeholder-redirect-uri.com');
 
 // the Subscription-Id represents the dealership context of an API call
 // in this example, we call the merchandisable vehicles API to get the vehicles available for sale in a given dealership
@@ -92,7 +94,7 @@ class App extends Component {
     else {
       // login link to get access token
       return (
-        <a href={`https://api.fortellis.io/oauth/authorize?response_type=token&client_id=${client_id}`}>
+        <a href={`https://identity.fortellis.io/oauth2/aus1p1ixy7YL8cMq02p7/v1/authorize?response_type=token&client_id=${client_id}&redirect_uri=${redirect_uri}&nonce=nonce&scope=openid&state=state`}>
           Login with Fortellis
         </a>
       )
