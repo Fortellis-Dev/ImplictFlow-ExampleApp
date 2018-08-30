@@ -66,19 +66,20 @@ class App extends Component {
     else if (this.state.vehicles.length > 0) {
       // display results of API call
       return (
-        <table align="center" cellspacing="25">
-          {this.state.vehicles.map((row, index) => {
-            return (
-              <tr>
-                <td><img src={row.merchandisingSummary.mainPhoto.path} height="200" width="300" alt="vehicle"/></td>
-                <td>{row.vehicle.description.description}</td>
-                <td>{row.merchandisingSummary.price.netPrice}{row.merchandisingSummary.price.currencyCode}</td>
-              </tr>
-            )
-          })}
+        <table align="center" cellSpacing="25">
+          <tbody>
+            {this.state.vehicles.map((row, index) => {
+              return (
+                <tr key={row.vehicle.merchandisableVehicleId}>
+                  <td><img src={row.merchandisingSummary.mainPhoto.path} height="200" width="300" alt="vehicle"/></td>
+                  <td>{row.vehicle.description.description}</td>
+                  <td>{row.merchandisingSummary.price.netPrice}{row.merchandisingSummary.price.currencyCode}</td>
+                </tr>
+              )
+            })}
+          </tbody>
         </table>
       )
-  
     }
     else if (token) {
       // button to make API call
