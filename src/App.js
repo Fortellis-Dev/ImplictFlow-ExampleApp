@@ -33,7 +33,7 @@ class App extends Component {
 
     // make an API call to a fortellis API
     // supply the previously acquired token in the Authorization header
-    fetch('https://api.fortellis.io/sales/inventory/v0/merchandisable-vehicles/', {
+    fetch('https://api.fortellis.io/sales/inventory/v1/merchandisable-vehicles/', {
         headers: {
           'Subscription-Id': subscription_id,
           'Authorization': `Bearer ${token}`
@@ -72,10 +72,10 @@ class App extends Component {
           <tbody>
             {this.state.vehicles.map((row, index) => {
               return (
-                <tr key={row.vehicle.merchandisableVehicleId}>
-                  <td><img src={row.merchandisingSummary.mainPhoto.path} height="200" width="300" alt="vehicle"/></td>
-                  <td>{row.vehicle.description.description}</td>
-                  <td>{row.merchandisingSummary.price.netPrice}{row.merchandisingSummary.price.currencyCode}</td>
+                <tr key={row.merchandisableVehicleId}>
+                  <td><img src={row.summary.primaryImageLink.href} height="200" width="300" alt="vehicle"/></td>
+                  <td>{row.description.description}</td>
+                  <td>{row.prices.netPrice}{row.prices.currencyCode}</td>
                 </tr>
               )
             })}
