@@ -5,7 +5,7 @@ import './App.css';
 // replace this with the client_id of your fortellis app
 const client_id = 'placeholder-client-id';
 // replace this with the redirect url of your fortellis app
-const redirect_uri = encodeURI('https://placeholder-redirect-uri.com');
+const redirect_uri = encodeURIComponent('https://placeholder-redirect-uri.com');
 
 // the Subscription-Id represents the dealership context of an API call
 // in this example, we call the merchandisable vehicles API to get the vehicles available for sale in a given dealership
